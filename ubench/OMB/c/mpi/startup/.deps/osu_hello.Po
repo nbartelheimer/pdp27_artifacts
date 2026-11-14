@@ -1,0 +1,56 @@
+osu_hello.o: osu_hello.c /home/nbartelh/opt/openmpi/include/mpi.h \
+  /apps/easybuild/core/software/LLVM/20.1.5-GCCcore-13.3.0/lib/clang/20/include/stddef.h \
+  /apps/easybuild/core/software/LLVM/20.1.5-GCCcore-13.3.0/lib/clang/20/include/__stddef_header_macro.h \
+  /apps/easybuild/core/software/LLVM/20.1.5-GCCcore-13.3.0/lib/clang/20/include/__stddef_ptrdiff_t.h \
+  /apps/easybuild/core/software/LLVM/20.1.5-GCCcore-13.3.0/lib/clang/20/include/__stddef_size_t.h \
+  /apps/easybuild/core/software/LLVM/20.1.5-GCCcore-13.3.0/lib/clang/20/include/__stddef_wchar_t.h \
+  /apps/easybuild/core/software/LLVM/20.1.5-GCCcore-13.3.0/lib/clang/20/include/__stddef_null.h \
+  /apps/easybuild/core/software/LLVM/20.1.5-GCCcore-13.3.0/lib/clang/20/include/__stddef_max_align_t.h \
+  /apps/easybuild/core/software/LLVM/20.1.5-GCCcore-13.3.0/lib/clang/20/include/__stddef_offsetof.h \
+  /home/nbartelh/opt/openmpi/include/mpi_portable_platform.h \
+  /usr/include/stdio.h /usr/include/bits/libc-header-start.h \
+  /usr/include/features.h /usr/include/stdc-predef.h \
+  /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+  /usr/include/bits/long-double.h /usr/include/gnu/stubs.h \
+  /usr/include/gnu/stubs-64.h \
+  /apps/easybuild/core/software/LLVM/20.1.5-GCCcore-13.3.0/lib/clang/20/include/stdarg.h \
+  /apps/easybuild/core/software/LLVM/20.1.5-GCCcore-13.3.0/lib/clang/20/include/__stdarg___gnuc_va_list.h \
+  /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+  /usr/include/bits/types/__fpos_t.h \
+  /usr/include/bits/types/__mbstate_t.h \
+  /usr/include/bits/types/__fpos64_t.h /usr/include/bits/types/__FILE.h \
+  /usr/include/bits/types/FILE.h /usr/include/bits/types/struct_FILE.h \
+  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+  /usr/include/bits/stdio.h
+/home/nbartelh/opt/openmpi/include/mpi.h:
+/apps/easybuild/core/software/LLVM/20.1.5-GCCcore-13.3.0/lib/clang/20/include/stddef.h:
+/apps/easybuild/core/software/LLVM/20.1.5-GCCcore-13.3.0/lib/clang/20/include/__stddef_header_macro.h:
+/apps/easybuild/core/software/LLVM/20.1.5-GCCcore-13.3.0/lib/clang/20/include/__stddef_ptrdiff_t.h:
+/apps/easybuild/core/software/LLVM/20.1.5-GCCcore-13.3.0/lib/clang/20/include/__stddef_size_t.h:
+/apps/easybuild/core/software/LLVM/20.1.5-GCCcore-13.3.0/lib/clang/20/include/__stddef_wchar_t.h:
+/apps/easybuild/core/software/LLVM/20.1.5-GCCcore-13.3.0/lib/clang/20/include/__stddef_null.h:
+/apps/easybuild/core/software/LLVM/20.1.5-GCCcore-13.3.0/lib/clang/20/include/__stddef_max_align_t.h:
+/apps/easybuild/core/software/LLVM/20.1.5-GCCcore-13.3.0/lib/clang/20/include/__stddef_offsetof.h:
+/home/nbartelh/opt/openmpi/include/mpi_portable_platform.h:
+/usr/include/stdio.h:
+/usr/include/bits/libc-header-start.h:
+/usr/include/features.h:
+/usr/include/stdc-predef.h:
+/usr/include/sys/cdefs.h:
+/usr/include/bits/wordsize.h:
+/usr/include/bits/long-double.h:
+/usr/include/gnu/stubs.h:
+/usr/include/gnu/stubs-64.h:
+/apps/easybuild/core/software/LLVM/20.1.5-GCCcore-13.3.0/lib/clang/20/include/stdarg.h:
+/apps/easybuild/core/software/LLVM/20.1.5-GCCcore-13.3.0/lib/clang/20/include/__stdarg___gnuc_va_list.h:
+/usr/include/bits/types.h:
+/usr/include/bits/typesizes.h:
+/usr/include/bits/types/__fpos_t.h:
+/usr/include/bits/types/__mbstate_t.h:
+/usr/include/bits/types/__fpos64_t.h:
+/usr/include/bits/types/__FILE.h:
+/usr/include/bits/types/FILE.h:
+/usr/include/bits/types/struct_FILE.h:
+/usr/include/bits/stdio_lim.h:
+/usr/include/bits/sys_errlist.h:
+/usr/include/bits/stdio.h:

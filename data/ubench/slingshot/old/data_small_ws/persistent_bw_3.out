@@ -1,0 +1,57 @@
+PRISM rank 0 provider info:
+   cxi (cxi0)
+  capabilities: FI_RMA, FI_WRITE, FI_REMOTE_WRITE, FI_MULTI_RECV, FI_TRIGGER, FI_LOCAL_COMM, FI_REMOTE_COMM, FI_RMA_EVENT
+  mode: 
+Domain attributes:
+  threading: FI_THREAD_DOMAIN
+  data progress mode FI_PROGRESS_MANUAL
+  control progress mode FI_PROGRESS_MANUAL
+  MR mode FI_MR_ALLOCATED, FI_MR_ENDPOINT
+Tx attributes:
+  tx iov_limit: 1
+  tx rma_iov_limit: 1
+  tx size: 1024
+  tx ordering: 
+  tx default flags: 
+PRISM rank 1 provider info:
+   cxi (cxi0)
+  capabilities: FI_RMA, FI_WRITE, FI_REMOTE_WRITE, FI_MULTI_RECV, FI_TRIGGER, FI_LOCAL_COMM, FI_REMOTE_COMM, FI_RMA_EVENT
+  mode: 
+Domain attributes:
+  threading: FI_THREAD_DOMAIN
+  data progress mode FI_PROGRESS_MANUAL
+  control progress mode FI_PROGRESS_MANUAL
+  MR mode FI_MR_ALLOCATED, FI_MR_ENDPOINT
+Tx attributes:
+  tx iov_limit: 1
+  tx rma_iov_limit: 1
+  tx size: 1024
+  tx ordering: 
+  tx default flags: 
+
+# OSU MPI Bandwidth Persistent Test v7.5.2
+# Datatype: MPI_CHAR.
+# Size      Bandwidth (MB/s)
+1                       0.18
+2                       0.38
+4                       0.78
+8                       1.56
+16                      2.62
+32                      5.40
+64                     10.47
+128                    20.53
+256                    40.89
+512                    75.59
+1024                  151.79
+2048                  298.04
+4096                  562.91
+8192                 1076.03
+16384                1874.27
+32768                3550.34
+65536                6723.33
+131072              10144.07
+262144              14253.85
+524288              18033.69
+1048576             20548.31
+2097152             22056.34
+4194304             22826.86

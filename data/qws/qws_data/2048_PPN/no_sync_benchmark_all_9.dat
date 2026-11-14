@@ -1,0 +1,62 @@
+QWS git commit hash : 014e1d4a385b0e577f7c8b050eb77722d46869dd
+test_double_prec_functions
+                         input :     5.68118491005819e+07
+                    deo_in_vm_ :     1.74432230604232e+09
+                dee_deo_in_vm_ :     7.33829768250753e+09
+                deo_dag_in_vm_ :     1.75634677702122e+09
+            dee_deo_dag_in_vm_ :     7.42119740338076e+09
+      one_minus_dee_deo_in_vm_ :     2.85081513836627e+07
+      one_minus_deo_dag_in_vm_ :     2.84731128665340e+07
+           deo_out_pre|pos_vm_ :     2.64332975882886e+03
+       deo_dag_out_pre|pos_vm_ :     2.58602201341728e+03
+       dee_deo_out_pre|pos_vm_ :     1.11879843618702e+04
+   dee_deo_dag_out_pre|pos_vm_ :     1.09631583253684e+04
+                      clvd_vm_ :     1.19397789293041e+08
+                     clvd_vm2_ :     1.19397789293041e+08
+                       deo_vm_ :     2.16730652875723e+09
+                   dee_deo_vm_ :     9.11147195015550e+09
+         one_minus_dee_deo_vm_ :     2.85235616857313e+07
+                   deo_dag_vm_ :     2.16772904152763e+09
+               dee_deo_dag_vm_ :     9.13153975532677e+09
+         one_minus_deo_dag_vm_ :     2.84828505344808e+07
+                    mtilde_vm_ :     4.73842187826958e+07
+                mtilde_dag_vm_ :     4.70511801724108e+07
+                   mtdagmt_vm_ :     1.55513549726153e+08
+            ddd_out_pre|pos_d_ :     4.66558550932910e+06
+                     ddd_in_d_ :     4.65196990712067e+07
+                        ddd_d_ :     1.02776343401752e+08
+test_single_prec_functions
+                      input_s_ :     5.68118480000000e+07
+                     deo_in_s_ :     1.74432243200000e+09
+                 dee_deo_in_s_ :     7.33829836800000e+09
+       one_minus_dee_deo_in_s_ :     2.85081520000000e+07
+            deo_out_pre|pos_s_ :     2.64332934570312e+03
+        dee_deo_out_pre|pos_s_ :     1.11879843750000e+04
+                        clv_s_ :     1.19397792000000e+08
+                        deo_s_ :     2.16730675200000e+09
+                    dee_deo_s_ :     9.11147110400000e+09
+          one_minus_dee_deo_s_ :     2.85235620000000e+07
+                     mtilde_s_ :     4.73842160000000e+07
+            ddd_out_pre|pos_s_ :     4.50041850000000e+06
+                     ddd_in_s_ :     4.65197080000000e+07
+                        ddd_s_ :     1.02776344000000e+08
+test bicgstab for double precision mtilde
+bnorm^2     =     2.84708716047073e+07
+rnorm^2     =     1.87202569763774e-21
+xnorm^2     =     9.40555724430452e+07
+rnorm/bnorm =     8.10878007360477e-15
+etime for sovler =     1.84041523933411e+00 sec.
+
+
+LDDHMC solver with Jacobi method instead of SSOR
+bnorm^2     =     5.68118491005819e+07
+rnorm^2     =     3.76826569098047e-23
+xnorm^2     =     3.30508341223778e+08
+rnorm/bnorm =     8.14425373501934e-16
+etime for sovler =     7.59109973907471e+00 sec.
+
+
+print timing
+    rank	func_id                         	   calls	    total(s)	  average(s)
+       0	all                             	     500	7.477829e+00	1.495566e-02
+end

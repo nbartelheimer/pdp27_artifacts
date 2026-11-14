@@ -1,0 +1,114 @@
+[hpca-013:1489115] mca: base: components_register: registering framework bml components
+[hpca-013:1489115] mca: base: components_register: found loaded component r2
+[hpca-013:1489115] mca: base: components_register: component r2 register function successful
+[hpca-013:1489115] mca: base: components_open: opening bml components
+[hpca-013:1489115] mca: base: components_open: found loaded component r2
+[hpca-013:1489115] mca: base: components_open: component r2 open function successful
+[hpca-013:1489115] mca: base: components_register: registering framework btl components
+[hpca-013:1489115] mca: base: components_register: found loaded component self
+[hpca-013:1489114] mca: base: components_register: registering framework bml components
+[hpca-013:1489114] mca: base: components_register: found loaded component r2
+[hpca-013:1489114] mca: base: components_register: component r2 register function successful
+[hpca-013:1489114] mca: base: components_open: opening bml components
+[hpca-013:1489115] mca: base: components_register: component self register function successful
+[hpca-013:1489115] mca: base: components_register: found loaded component ofi
+[hpca-013:1489114] mca: base: components_open: found loaded component r2
+[hpca-013:1489114] mca: base: components_open: component r2 open function successful
+[hpca-013:1489114] mca: base: components_register: registering framework btl components
+[hpca-013:1489114] mca: base: components_register: found loaded component self
+[hpca-013:1489115] mca: base: components_register: component ofi register function successful
+[hpca-013:1489115] mca: base: components_register: found loaded component sm
+[hpca-013:1489114] mca: base: components_register: component self register function successful
+[hpca-013:1489114] mca: base: components_register: found loaded component ofi
+[hpca-013:1489115] mca: base: components_register: component sm register function successful
+[hpca-013:1489114] mca: base: components_register: component ofi register function successful
+[hpca-013:1489114] mca: base: components_register: found loaded component sm
+[hpca-013:1489115] mca: base: components_open: opening btl components
+[hpca-013:1489115] mca: base: components_open: found loaded component self
+[hpca-013:1489115] mca: base: components_open: component self open function successful
+[hpca-013:1489115] mca: base: components_open: found loaded component ofi
+[hpca-013:1489115] mca: base: components_open: component ofi open function successful
+[hpca-013:1489115] mca: base: components_open: found loaded component sm
+[hpca-013:1489115] mca: base: components_open: component sm open function successful
+[hpca-013:1489114] mca: base: components_register: component sm register function successful
+[hpca-013:1489114] mca: base: components_open: opening btl components
+[hpca-013:1489114] mca: base: components_open: found loaded component self
+[hpca-013:1489114] mca: base: components_open: component self open function successful
+[hpca-013:1489114] mca: base: components_open: found loaded component ofi
+[hpca-013:1489114] mca: base: components_open: component ofi open function successful
+[hpca-013:1489114] mca: base: components_open: found loaded component sm
+[hpca-013:1489114] mca: base: components_open: component sm open function successful
+[hpca-013:1489115] select: initializing btl component self
+[hpca-013:1489115] select: init of component self returned success
+[hpca-013:1489115] select: initializing btl component ofi
+[hpca-013:1489114] select: initializing btl component self
+[hpca-013:1489114] select: init of component self returned success
+[hpca-013:1489114] select: initializing btl component ofi
+[hpca-014:2817257] mca: base: components_register: registering framework bml components
+[hpca-014:2817257] mca: base: components_register: found loaded component r2
+[hpca-014:2817257] mca: base: components_register: component r2 register function successful
+[hpca-014:2817257] mca: base: components_open: opening bml components
+[hpca-014:2817257] mca: base: components_open: found loaded component r2
+[hpca-014:2817257] mca: base: components_open: component r2 open function successful
+[hpca-014:2817256] mca: base: components_register: registering framework bml components
+[hpca-014:2817256] mca: base: components_register: found loaded component r2
+[hpca-014:2817256] mca: base: components_register: component r2 register function successful
+[hpca-014:2817256] mca: base: components_open: opening bml components
+[hpca-014:2817256] mca: base: components_open: found loaded component r2
+[hpca-014:2817256] mca: base: components_open: component r2 open function successful
+[hpca-014:2817256] mca: base: components_register: registering framework btl components
+[hpca-014:2817256] mca: base: components_register: found loaded component self
+[hpca-014:2817257] mca: base: components_register: registering framework btl components
+[hpca-014:2817257] mca: base: components_register: found loaded component self
+[hpca-014:2817257] mca: base: components_register: component self register function successful
+[hpca-014:2817257] mca: base: components_register: found loaded component ofi
+[hpca-014:2817256] mca: base: components_register: component self register function successful
+[hpca-014:2817256] mca: base: components_register: found loaded component ofi
+[hpca-014:2817257] mca: base: components_register: component ofi register function successful
+[hpca-014:2817257] mca: base: components_register: found loaded component sm
+[hpca-014:2817256] mca: base: components_register: component ofi register function successful
+[hpca-014:2817256] mca: base: components_register: found loaded component sm
+[hpca-014:2817257] mca: base: components_register: component sm register function successful
+[hpca-014:2817256] mca: base: components_register: component sm register function successful
+[hpca-014:2817256] mca: base: components_open: opening btl components
+[hpca-014:2817256] mca: base: components_open: found loaded component self
+[hpca-014:2817256] mca: base: components_open: component self open function successful
+[hpca-014:2817256] mca: base: components_open: found loaded component ofi
+[hpca-014:2817256] mca: base: components_open: component ofi open function successful
+[hpca-014:2817257] mca: base: components_open: opening btl components
+[hpca-014:2817257] mca: base: components_open: found loaded component self
+[hpca-014:2817257] mca: base: components_open: component self open function successful
+[hpca-014:2817257] mca: base: components_open: found loaded component ofi
+[hpca-014:2817257] mca: base: components_open: component ofi open function successful
+[hpca-014:2817257] mca: base: components_open: found loaded component sm
+[hpca-014:2817257] mca: base: components_open: component sm open function successful
+[hpca-014:2817256] mca: base: components_open: found loaded component sm
+[hpca-014:2817256] mca: base: components_open: component sm open function successful
+[hpca-014:2817257] select: initializing btl component self
+[hpca-014:2817257] select: init of component self returned success
+[hpca-014:2817257] select: initializing btl component ofi
+[hpca-014:2817256] select: initializing btl component self
+[hpca-014:2817256] select: init of component self returned success
+[hpca-014:2817256] select: initializing btl component ofi
+[hpca-013:1489115] select: init of component ofi returned success
+[hpca-013:1489115] select: initializing btl component sm
+[hpca-013:1489115] select: init of component sm returned success
+[hpca-013:1489114] select: init of component ofi returned success
+[hpca-013:1489114] select: initializing btl component sm
+[hpca-013:1489114] select: init of component sm returned success
+[hpca-014:2817257] select: init of component ofi returned success
+[hpca-014:2817257] select: initializing btl component sm
+[hpca-014:2817256] select: init of component ofi returned success
+[hpca-014:2817256] select: initializing btl component sm
+[hpca-014:2817257] select: init of component sm returned success
+[hpca-014:2817256] select: init of component sm returned success
+[hpca-013:1489114] mca: bml: Using self btl for send to [[40314,1],0] on node hpca-013
+[hpca-013:1489115] mca: bml: Using self btl for send to [[40314,1],1] on node hpca-013
+[hpca-013:1489114] mca: bml: Using sm btl for send to [[40314,1],1] on node hpca-013
+[hpca-013:1489115] mca: bml: Using sm btl for send to [[40314,1],0] on node hpca-013
+[hpca-014:2817256] mca: bml: Using self btl for send to [[40314,1],2] on node hpca-014
+[hpca-014:2817257] mca: bml: Using self btl for send to [[40314,1],3] on node hpca-014
+[hpca-014:2817257] mca: bml: Using sm btl for send to [[40314,1],2] on node hpca-014
+[hpca-014:2817256] mca: bml: Using sm btl for send to [[40314,1],3] on node hpca-014
+[hpca-014:2817257] mca: bml: Using ofi btl for send to [[40314,1],0] on node hpca-013
+[hpca-013:1489115] mca: bml: Using ofi btl for send to [[40314,1],2] on node hpca-014

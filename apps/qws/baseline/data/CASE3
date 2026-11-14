@@ -1,0 +1,86 @@
+test_double_prec_functions
+                         input :     5.54803213872870e+04
+                    deo_in_vm_ :     1.71873804138429e+06
+                dee_deo_in_vm_ :     7.27143834829340e+06
+                deo_dag_in_vm_ :     1.67613609707322e+06
+            dee_deo_dag_in_vm_ :     7.07938461218490e+06
+      one_minus_dee_deo_in_vm_ :     2.78638406251347e+04
+      one_minus_deo_dag_in_vm_ :     2.78005923479858e+04
+           deo_out_pre|pos_vm_ :     2.57681083760685e+00
+       deo_dag_out_pre|pos_vm_ :     2.56553553591092e+00
+       dee_deo_out_pre|pos_vm_ :     1.08519898426640e+01
+   dee_deo_dag_out_pre|pos_vm_ :     1.08717560384225e+01
+                      clvd_vm_ :     1.16599403606485e+05
+                     clvd_vm2_ :     1.16599403606485e+05
+                       deo_vm_ :     2.13372441417384e+06
+                   dee_deo_vm_ :     9.02956898764016e+06
+         one_minus_dee_deo_vm_ :     2.78721273739867e+04
+                   deo_dag_vm_ :     2.08676577821759e+06
+               dee_deo_dag_vm_ :     8.82699434045118e+06
+         one_minus_deo_dag_vm_ :     2.78006978605129e+04
+                    mtilde_vm_ :     4.72664240597572e+04
+                mtilde_dag_vm_ :     4.63885112095583e+04
+                   mtdagmt_vm_ :     1.57965412230334e+05
+            ddd_out_pre|pos_d_ :     4.41104594750990e+03
+                     ddd_in_d_ :     4.51108520037553e+04
+                        ddd_d_ :     1.00779707470810e+05
+test_single_prec_functions
+                      input_s_ :     5.54803203125000e+04
+                     deo_in_s_ :     1.71873800000000e+06
+                 dee_deo_in_s_ :     7.27143900000000e+06
+       one_minus_dee_deo_in_s_ :     2.78638417968750e+04
+            deo_out_pre|pos_s_ :     2.57681083679199e+00
+        dee_deo_out_pre|pos_s_ :     1.08519897460938e+01
+                        clv_s_ :     1.16599398437500e+05
+                        deo_s_ :     2.13372450000000e+06
+                    dee_deo_s_ :     9.02957000000000e+06
+          one_minus_dee_deo_s_ :     2.78721289062500e+04
+                     mtilde_s_ :     4.72664218750000e+04
+            ddd_out_pre|pos_s_ :     4.34166503906250e+03
+                     ddd_in_s_ :     4.51108515625000e+04
+                        ddd_s_ :     1.00779710937500e+05
+test bicgstab for double precision mtilde
+bnorm^2     =     2.78035855514719e+04
+rnorm^2     =     5.60633430878753e-23
+xnorm^2     =     8.91394935994690e+04
+rnorm/bnorm =     4.49044201398104e-14
+
+
+LDDHMC solver with Jacobi method instead of SSOR
+iter = 1, rnorm =     1.01960896961622e-07, sqrt(rnorm/bnorm) =     1.35564925450583e-06, xnorm =     3.29834973147755e+05
+iter = 1, rnorm =     5.69018866499368e-20, sqrt(rnorm/bnorm) =     1.01273040519588e-12, xnorm =     3.29834913548929e+05
+iter = 2, rnorm =     3.17492504083178e-32, sqrt(rnorm/bnorm) =     7.56479657648582e-19, xnorm =     3.29834913548934e+05
+iter = 2, rnorm =     1.35868193554505e-44, sqrt(rnorm/bnorm) =     4.94868051159999e-25, xnorm =     3.29834913548934e+05
+iter = 3, rnorm =     1.74832745189298e-56, sqrt(rnorm/bnorm) =     5.61360569763443e-31, xnorm =     3.29834913548934e+05
+iter = 3, rnorm =     7.62797332818118e-69, sqrt(rnorm/bnorm) =     3.70796049789617e-37, xnorm =     3.29834913548934e+05
+iter = 4, rnorm =     3.49999987391593e-80, sqrt(rnorm/bnorm) =     7.94263362912413e-43, xnorm =     3.29834913548934e+05
+iter = 4, rnorm =     1.62890211858146e-92, sqrt(rnorm/bnorm) =     5.41848667847846e-49, xnorm =     3.29834913548934e+05
+iter = 5, rnorm =    1.15334144331033e-103, sqrt(rnorm/bnorm) =     1.44181475248720e-54, xnorm =     3.29834913548934e+05
+iter = 5, rnorm =    5.32356778200263e-116, sqrt(rnorm/bnorm) =     9.79561956413073e-61, xnorm =     3.29834913548934e+05
+bnorm^2     =     5.54803213872870e+04
+rnorm^2     =     3.69909297496694e-26
+xnorm^2     =     3.29834913548935e+05
+rnorm/bnorm =     8.16541269220812e-16
+
+
+print timing
+    rank	func_id                         	   calls	    total(s)	  average(s)
+       0	prec_s_                         	      10	3.841400e-03	3.841400e-04
+       0	bicgstab_precdd_s_iter_bar_reduc3_2_	     500	1.837254e-03	3.674507e-06
+       0	bicgstab_precdd_s_iter_reduc3_  	    1000	4.417658e-03	4.417658e-06
+       0	bicgstab_precdd_s_iter_bar_reduc3_1_	     500	2.537966e-03	5.075932e-06
+       0	bicgstab_precdd_s_iter_reduc1_  	     500	2.140284e-03	4.280567e-06
+       0	bicgstab_precdd_s_iter_bar_reduc1_	     500	2.095461e-03	4.190922e-06
+       0	bicgstab_precdd_s_iter_reduc2_  	     500	2.410173e-03	4.820347e-06
+       0	bicgstab_precdd_s_iter_bar_reduc2_	     500	2.509832e-03	5.019665e-06
+       0	s_mult_wd_deo_out_recv_hpc_calc_	   11000	4.258823e-02	3.871658e-06
+       0	ddd_out_pos_s_                  	   11000	1.172011e-01	1.065464e-05
+       0	ddd_in_s_                       	   10000	5.102611e-02	5.102611e-06
+       0	s_mult_wd_deo_out_send_hpc_     	   11000	3.081679e-02	2.801527e-06
+       0	ddd_out_pre_s_                  	   11000	1.343908e-01	1.221735e-05
+       0	jinv_ddd_in_s_                  	   10000	1.292243e-01	1.292243e-05
+       0	prec_ddd_s_                     	    1000	4.606161e-01	4.606161e-04
+       0	bicgstab_precdd_s_iter_         	     500	4.908538e-01	9.817076e-04
+       0	bicgstab_precdd_s_              	      10	4.920878e-01	4.920878e-02
+       0	bicgstab_iter_                  	      99	1.589224e+00	1.605276e-02
+end

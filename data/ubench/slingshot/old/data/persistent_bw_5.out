@@ -1,0 +1,39 @@
+Provider info:
+   cxi (cxi0)
+  capabilities: FI_RMA, FI_WRITE, FI_REMOTE_WRITE, FI_MULTI_RECV, FI_TRIGGER, FI_LOCAL_COMM, FI_REMOTE_COMM, FI_RMA_EVENT
+  mode: 
+Domain attributes:
+  threading: FI_THREAD_DOMAIN
+  data progress mode FI_PROGRESS_MANUAL
+  control progress mode FI_PROGRESS_MANUAL
+  MR mode FI_MR_ALLOCATED, FI_MR_ENDPOINT
+Tx attributes:
+  tx iov_limit: 1
+  tx rma_iov_limit: 1
+
+# OSU MPI Bandwidth Persistent Test v7.5.2
+# Datatype: MPI_CHAR.
+# Size      Bandwidth (MB/s)
+1                       0.56
+2                       1.16
+4                       2.35
+8                       4.58
+16                      9.13
+32                     18.39
+64                     37.88
+128                    76.25
+256                   151.59
+512                   303.34
+1024                  600.87
+2048                 1143.74
+4096                 2400.69
+8192                 4766.72
+16384                9366.13
+32768               12927.85
+65536               22811.20
+131072              23210.64
+262144              23563.19
+524288              23682.86
+1048576             23709.52
+2097152             23722.63
+4194304             23749.81

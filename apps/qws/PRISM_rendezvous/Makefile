@@ -1,0 +1,730 @@
+##****************************************************************************************
+##
+##  Copyright (c) 2015-2020, Yoshifumi Nakamura <nakamura@riken.jp>
+##  Copyright (c) 2015-2020, Yuta Mukai         <mukai.yuta@fujitsu.com>
+##  Copyright (c) 2018-2020, Ken-Ichi Ishikawa  <ishikawa@theo.phys.sci.hirosima-u.ac.jp>
+##  Copyright (c) 2019-2020, Issaku Kanamori    <kanamori-i@riken.jp>
+##
+##
+##  All rights reserved.
+##
+##  Redistribution and use in source and binary forms, with or without
+##  modification, are permitted provided that the following conditions are
+##  met:
+##
+##  * Redistributions of source code must retain the above copyright
+##    notice, this list of conditions and the following disclaimer.
+##
+##  * Redistributions in binary form must reproduce the above copyright
+##    notice, this list of conditions and the following disclaimer listed
+##    in this license in the documentation and/or other materials
+##    provided with the distribution.
+##
+##  * Neither the name of the copyright holders nor the names of its
+##    contributors may be used to endorse or promote products derived from
+##    this software without specific prior written permission.
+##
+##  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+##  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+##  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+##  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+##  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+##  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+##  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+##  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+##  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+##  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+##  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+##
+##----------------------------------------------------------------------------------------
+##  ACKNOWLEDGMENT
+##
+##  This software has been developed in a co-design working group for the lattice QCD
+##  supported by MEXT's programs for the Development and Improvement for the Next
+##  Generation Ultra High-Speed Computer System, under its Subsidies for Operating the
+##  Specific Advanced Large Research Facilities, and Priority Issue 9
+##  (Elucidation of the Fundamental Laws and Evolution of the Universe) to be tackled by
+##  using the Supercomputer Fugaku.
+##
+##****************************************************************************************
+GITVERSION=$(shell git log -1 --format="%H")
+#===============================================================================
+# set default options for Fugaku benchmark
+fugaku_benchmark=
+#===============================================================================
+debug     =
+mpi       =1
+omp       =1
+#compiler [openmpi-gnu, gnu, intel, fujitsu_native, fujitsu_cross, nec, nvhpc-hpcx]
+compiler  =openmpi-gnu
+#arch [fx100, postk, skylake, ofp, thunderx2, grace, simulator, sx]
+arch      =skylake
+#profiler [timing, fapp, fpcoll, pa, caliper] (nondisclousure: timing2)
+profiler  =timing
+timing2_path=
+prof_selective=
+#target [jinv, in, pre, pos, other, all, all_calc, overlapped, send, send_post, recv, reduc1, reduc2, reduc3]
+target    =
+half_prec =
+#path to half precision library required in non clang mode
+#libhalf=$(HOME)/opt/half-1.12.0/include
+#rdma [,utofu, utofu_threaded, utofu_threaded_norankmap, mpi_rankmap]  (todo: fjmpi)
+rdma      =
+#clangmode : clang mode for fujitsu compiler
+clang     =
+#Power API : Power API for Fugaku and FX1000
+powerapi  =
+#Barrier before Allreduce
+bar_reduc =
+#COMPILE_TIME_DIM_SIZE
+fixedsize =
+#interfase [bqcd]
+interface =
+#===============================================================================
+# set default options for Fugaku benchmark
+ifdef fugaku_benchmark
+debug     =
+mpi       =1
+omp       =1
+compiler  =fujitsu_cross
+arch      =postk
+profiler  =timing2
+timing2_path=/home/g9300001/u93022/opt/timing2_para.o
+prof_selective=
+target    =all
+half_prec =
+rdma      =utofu_threaded
+clang     =
+powerapi  =1
+bar_reduc =
+fixedsize =1
+endif
+#===============================================================================
+REFIX    =.
+
+FPP       = cpp -C -P --sysroot=.
+ARFLAGS   = 
+#FFLAGS    = -I$(HOME)/src/bqcdi/modules 
+CPPFLAGS  = $(cppflags)
+
+PATH_LIBREADPIC=$(HOME)
+# CALIPER_DIR = <caliper directory>
+CALIPER_DIR =
+
+
+ifeq ($(compiler),openmpi-gnu)
+  ifdef mpi
+    CC        = mpicc
+    CXX       = mpicxx
+    F90       = mpif90
+    MYFLAGS   = -D_MPI_
+  else
+    CC        = gcc
+    CXX       = g++
+    F90       = gfortran
+  endif
+  MYFLAGS    += -D_CHECK_TIMING
+  CFLAGS      = -g
+  CXXFLAGS    = $(CFLAGS) -std=gnu++11
+  CXXFLAGS_A  = $(CFLAGS) -std=gnu++11
+  LDFLAGS=
+  SYSLIBS=
+  ifdef omp
+    CFLAGS     += -fopenmp
+    CXXFLAGS   += -fopenmp
+    CXXFLAGS_A += -fopenmp
+  endif
+else ifeq ($(compiler),fujitsu_cross)
+  ifdef mpi
+    CC        = mpifccpx
+    CXX       = mpiFCCpx
+    F90       = mpifrtpx
+    RDMA_FLAGS=
+    ifeq ($(rdma),utofu)
+        RDMA_FLAGS= -D_RDMA_ -D_USE_RANKMAP -D_UTOFU_RDMA -D_UTOFU_RANKMAP
+    endif
+    ifeq ($(rdma),utofu_threaded)
+        RDMA_FLAGS= -D_RDMA_ -D_USE_RANKMAP -D_UTOFU_RDMA -D_UTOFU_RANKMAP -D_THREADED_RDMA
+    endif
+    ifeq ($(rdma),utofu_threaded_norankmap)
+        RDMA_FLAGS= -D_RDMA_ -D_UTOFU_RDMA -D_THREADED_RDMA
+    endif
+   ifeq ($(rdma),mpi_rankmap)
+        RDMA_FLAGS= -D_USE_RANKMAP -D_RDMA_ -D_UTOFU_RANKMAP
+    endif
+    ifeq ($(rdma),fjmpi)
+        RDMA_FLAGS= -D_RDMA_ -D_HPC_RDMA
+    endif
+    MYFLAGS   = -D_MPI_ $(RDMA_FLAGS)
+
+    MYFLAGS    += -D_NO_OMP_SINGLE  # error avoiding
+  else
+    CC        = fccpx
+    CXX       = FCCpx
+    F90       = frtpx
+  endif
+  ifndef clang
+    CFLAGS      = -Kfast,restp=all,optmsg=2,ocl,preex,noprefetch,noswp -Nline,lst=t
+    CFLAGS      = -Kfast,restp=all,optmsg=2,ocl,preex,noprefetch,noswp -Nline,lst=t -Nfjomplib -Kilfunc=loop -Krdconv=2
+    CFLAGS      = -Kfast,restp=all,optmsg=2,ocl,preex,noprefetch,noswp -Nline,lst=t -Nnofjprof -Nfjomplib -Kilfunc=loop -Krdconv=2
+    CXXFLAGS    = $(CFLAGS) -std=gnu++11
+    CXXFLAGS_A  = $(CFLAGS) -std=gnu++11 -Knosch_pre_ra,nosch_post_ra -Knoeval
+  else
+    ## clang mode
+    CFLAGS      = -Nclang -mcpu=a64fx+sve -Ofast  -Koptmsg=2,preex,noprefetch -Nnofjprof  -Kilfunc=loop -ffj-line -ffj-lst=t 
+    CXXFLAGS    = $(CFLAGS) -stdlib=libc++
+    CXXFLAGS_A  = $(CFLAGS) -stdlib=libc++
+  endif
+  LDFLAGS     =
+  SYSLIBS     = -ltofucom
+  ifdef powerapi
+    MYFLAGS    += -D_POWER_API_
+    CFLAGS     += -I/opt/FJSVtcs/pwrm/aarch64/include
+    CFLAGS_A   += -I/opt/FJSVtcs/pwrm/aarch64/include
+    CXXFLAGS   += -I/opt/FJSVtcs/pwrm/aarch64/include
+    CXXFLAGS_A += -I/opt/FJSVtcs/pwrm/aarch64/include
+    SYSLIBS    += -L/opt/FJSVtcs/pwrm/aarch64/lib64 -lpwr
+  endif
+  ifdef omp
+    CC       += -Kopenmp
+    CXX      += -Kopenmp
+  endif
+else ifeq ($(compiler),fujitsu_native)
+  ifdef mpi
+    CC        = mpifcc
+    CXX       = mpiFCC
+    F90       = mpifrt
+    RDMA_FLAGS=
+    ifeq ($(rdma),utofu)
+        RDMA_FLAGS= -D_RDMA_ -D_USE_RANKMAP -D_UTOFU_RDMA -D_UTOFU_RANKMAP
+    endif
+    ifeq ($(rdma),utofu_threaded)
+        RDMA_FLAGS= -D_RDMA_ -D_USE_RANKMAP -D_UTOFU_RDMA -D_UTOFU_RANKMAP -D_THREADED_RDMA
+    endif
+    ifeq ($(rdma),utofu_threaded_norankmap)
+        RDMA_FLAGS= -D_RDMA_ -D_UTOFU_RDMA -D_THREADED_RDMA
+    endif
+   ifeq ($(rdma),mpi_rankmap)
+        RDMA_FLAGS= -D_USE_RANKMAP -D_RDMA_ -D_UTOFU_RANKMAP
+    endif
+    ifeq ($(rdma),fjmpi)
+        RDMA_FLAGS= -D_RDMA_ -D_HPC_RDMA
+    endif
+    MYFLAGS   = -D_MPI_ $(RDMA_FLAGS)
+
+    MYFLAGS    += -D_NO_OMP_SINGLE  # error avoiding
+  else
+    CC        = fcc
+    CXX       = FCC
+    F90       = frt
+  endif
+  ifndef clang
+    CFLAGS      = -Kfast,restp=all,optmsg=2,ocl,preex,noprefetch,noswp -Nline,lst=t
+    CFLAGS      = -Kfast,restp=all,optmsg=2,ocl,preex,noprefetch,noswp -Nline,lst=t -Nfjomplib -Kilfunc=loop -Krdconv=2
+    CFLAGS      = -Kfast,restp=all,optmsg=2,ocl,preex,noprefetch,noswp -Nline,lst=t -Nnofjprof -Nfjomplib -Kilfunc=loop -Krdconv=2
+    CXXFLAGS    = $(CFLAGS) -std=gnu++11
+    CXXFLAGS_A  = $(CFLAGS) -std=gnu++11 -Knosch_pre_ra,nosch_post_ra -Knoeval
+  else
+    ## clang mode
+    CFLAGS      = -Nclang -mcpu=a64fx+sve -Ofast  -Koptmsg=2,preex,noprefetch -Nnofjprof  -Kilfunc=loop -ffj-line -ffj-lst=t 
+    CXXFLAGS    = $(CFLAGS) -stdlib=libc++
+    CXXFLAGS_A  = $(CFLAGS) -stdlib=libc++
+  endif
+  LDFLAGS     =
+  SYSLIBS     = -ltofucom
+  ifdef powerapi
+    MYFLAGS    += -D_POWER_API_
+    CFLAGS     += -I/opt/FJSVtcs/pwrm/aarch64/include
+    CFLAGS_A   += -I/opt/FJSVtcs/pwrm/aarch64/include
+    CXXFLAGS   += -I/opt/FJSVtcs/pwrm/aarch64/include
+    CXXFLAGS_A += -I/opt/FJSVtcs/pwrm/aarch64/include
+    SYSLIBS    += -L/opt/FJSVtcs/pwrm/aarch64/lib64 -lpwr
+  endif
+  ifdef omp
+    CC       += -Kopenmp
+    CXX      += -Kopenmp
+  endif
+else ifeq ($(compiler),intel)
+  ifdef mpi
+    CC        = mpiicx
+    CXX       = mpiicpx
+    F90       = mpiifx
+    MYFLAGS   = -D_MPI_
+    MYFLAGS  += -D_NO_OMP_SINGLE  # error avoiding
+  else
+    CC        = icx
+    CXX       = icpx
+    F90       = ifx
+  endif
+  ifdef omp
+    CC       += -qopenmp
+    CXX      += -qopenmp
+  endif
+  MYFLAGS    += -D_CHECK_TIMING
+  # -fp-model=precise is REQUIRED: icx/icpx default to -fp-model=fast, whose
+  # reassociation / fast reciprocals make the mixed-precision LDDHMC (Jacobi)
+  # solver diverge to NaN (block-2 rnorm^2 = -nan) while block-1 still converges.
+  # precise restores IEEE-consistent FP and the solver converges (rnorm^2 ~ 1e-26).
+  ifeq ($(arch),skylake)
+     CFLAGS   = -O3 -xCORE-AVX512 -fno-alias -qopt-zmm-usage=high -fp-model=precise -Wno-unknown-pragmas -DARCH_AVX512
+  else ifeq ($(arch),ofp)
+     CFLAGS   = -O3 -xKNL -fno-alias -qopt-zmm-usage=high -fp-model=precise -Wno-unknown-pragmas
+  endif
+  CXXFLAGS    = $(CFLAGS) -std=gnu++11
+  CXXFLAGS_A  = $(CFLAGS) -std=gnu++11
+  CFLAGS     += -std=gnu99
+  LDFLAGS     =
+  SYSLIBS     =
+else ifeq ($(compiler),nec)
+  ifdef mpi
+    CC        = mpincc
+    CXX       = mpinc++
+    F90       = mpinfort
+    MYFLAGS   = -D_MPI_
+    MYFLAGS  += -D_NO_OMP_SINGLE
+  else
+    CC        = ncc
+    CXX       = nc++
+    F90       = nfort
+  endif
+  MYFLAGS    += -D_CHECK_TIMING
+  CFLAGS      = -O3 -finline-functions -fno-strict-aliasing -report-all
+  CXXFLAGS    = $(CFLAGS) -std=gnu++11
+  CXXFLAGS_A  = $(CFLAGS) -std=gnu++11
+  LDFLAGS     =
+  SYSLIBS     =
+  ifdef omp
+    CC       += -fopenmp
+    CXX      += -fopenmp
+  endif
+else ifeq ($(compiler),nvhpc-hpcx)
+  ifdef mpi
+    CC        = mpicc
+    CXX       = mpicxx
+    F90       = mpif90
+    MYFLAGS   = -D_MPI_
+    MYFLAGS  += -D_NO_OMP_SINGLE
+  else
+    CC        = nvc
+    CXX       = nvc++
+    F90       = nvfortran
+  endif
+  MYFLAGS    += -D_CHECK_TIMING
+  CFLAGS      = -O3 -fast
+  ifdef ieee
+    CFLAGS   += -Kieee -Mnofma
+  endif
+  CXXFLAGS    = $(CFLAGS) -std=gnu++11
+  CXXFLAGS_A  = $(CFLAGS) -std=gnu++11
+  LDFLAGS     =
+  SYSLIBS     =
+  ifdef omp
+    CC       += -mp=ompt
+    CXX      += -mp=ompt
+  endif
+else ifeq ($(compiler),gnu)
+    CC        = gcc
+    CXX       = g++
+    F90       = gfortran
+  ifdef omp
+    CC       += -fopenmp
+    CXX      += -fopenmp
+  endif
+  MYFLAGS    += -D_CHECK_TIMING
+  CFLAGS      = -g
+  CXXFLAGS    = $(CFLAGS) -std=gnu++11
+  CXXFLAGS_A  = $(CFLAGS) -std=gnu++11
+  LDFLAGS=
+  SYSLIBS=
+else ifeq ($(compiler),aocc)
+  ## AMD Optimizing C/C++ Compiler (AOCC, clang-based) for AMD EPYC (Zen) CPUs.
+  ## On TSUBAME4: module load aocc openmpi/5.0.10-gcc and export
+  ## OMPI_CC=clang OMPI_CXX=clang++ OMPI_FC=flang so the OpenMPI wrappers
+  ## drive the AOCC compilers.  Override the target uarch with AMD_MARCH=...
+  ## (e.g. AMD_MARCH=-march=znver3 for a Milan login-node smoke test).
+  AMD_MARCH ?= -march=znver4
+  ifdef mpi
+    CC        = mpicc
+    CXX       = mpicxx
+    F90       = mpif90
+    MYFLAGS   = -D_MPI_
+    MYFLAGS  += -D_NO_OMP_SINGLE  # error avoiding
+  else
+    CC        = clang
+    CXX       = clang++
+    F90       = flang
+  endif
+  MYFLAGS    += -D_CHECK_TIMING
+  ## -fuse-ld=bfd: avoid lld's threaded link, which can hit a low ulimit -u
+  ## on shared nodes; -Qunused-arguments silences the compile-time notice.
+  CFLAGS      = -O3 $(AMD_MARCH) -fno-strict-aliasing -Wno-unknown-pragmas -fuse-ld=bfd -Qunused-arguments
+  CXXFLAGS    = $(CFLAGS) -std=gnu++11
+  CXXFLAGS_A  = $(CFLAGS) -std=gnu++11
+  CFLAGS     += -std=gnu99
+  LDFLAGS     =
+  SYSLIBS     =
+  ifdef omp
+    CC       += -fopenmp
+    CXX      += -fopenmp
+  endif
+else
+  $(error Unknown compiler: $(compiler))
+endif
+
+ifeq ($(arch),fx100)
+       vlend = 4
+       vlens = 8
+       strong_prefetch = 1
+else ifeq ($(arch),postk)
+       vlend = 8
+       vlens = 16
+       ifndef clang
+          MYFLAGS += -DINLINE_ASM_UNAVAILABLE -DARCH_POSTK
+       else
+          MYFLAGS += -DINLINE_ASM_UNAVAILABLE -DARCH_POSTK
+       endif
+       ifdef fixedsize
+          MYFLAGS += -DCOMPILE_TIME_DIM_SIZE -DNX=32 -DNY=6 -DNZ=4 -DNT=3
+       endif
+else ifeq ($(arch),thunderx2)
+       vlend=2
+       vlens=4
+else ifeq ($(arch),grace)
+       # NVIDIA Grace (Neoverse-V2, SVE2 128-bit). Logical VLEN > HW width
+       # gives the nvc++ auto-vectorizer/unroller more room.
+       vlend = 8
+       vlens = 16
+else ifeq ($(arch),zen4)
+       # AMD EPYC Zen4 (Genoa, AVX-512) / Zen3 (Milan, AVX2).
+       # Uses the portable SIMD path in qwsintrin_single.h (no ARCH_* macro),
+       # which the compiler auto-vectorizes; logical VLEN=512bit-equivalent.
+       vlend = 8
+       vlens = 16
+else ifeq ($(arch),skylake)
+       vlend=8
+       vlens=16
+else ifeq ($(arch),ofp)
+       vlend=8
+       vlens=16
+else ifeq ($(arch),sx)
+       vlend=8
+       vlens=16
+       MYFLAGS += -DINLINE_ASM_UNAVAILABLE
+else ifeq ($(arch),simulator)
+       vlend=2
+       vlens=2
+else
+  $(error Unknown architecture: $(arch))
+endif
+
+ifdef vlens
+  MYFLAGS += -DVLENS=$(vlens)
+endif
+ifdef vlend
+  MYFLAGS += -DVLEND=$(vlend)
+endif
+
+.SUFFIXES:
+.SUFFIXES: .a .o .cc .c .F90 .s .S
+
+.cc.o:
+	$(CXX) $(CXXFLAGS) $(MYFLAGS) $(CPPFLAGS) -c -o $@ $< 
+.c.o:
+	$(CC) $(CFLAGS) $(MYFLAGS) $(CPPFLAGS) -c -o $@ $<
+
+.cc.s:
+	$(CXX) $(CXXFLAGS) $(MYFLAGS) $(CPPFLAGS) -S $< 
+
+.F90.o:
+	$(FPP) $(CPPFLAGS) $(MYFLAGS) $< > $*.f90
+	$(F90) -c $(FFLAGS) $*.f90
+
+.S.o:
+	$(CC) $(CPPFLAGS) $< -c
+
+# communications
+OBJS_UTOFU = rdma_utofu_comlib.o rankmap_lib_utofu.o get_tofu_coord_common.o get_tofu_coord.o get_tofu_coord_openXYZ.o get_tofu_coord_openXY.o get_tofu_coord_openY.o get_tofu_coord_openY_topology.o get_tni_default.o
+
+ifdef mpi
+  ifndef rdma
+    OBJS_XBOUND = qws_xbound_mpi.o
+    OBJS_COMM = $(OBJS_XBOUND)
+  endif
+  ifeq ($(rdma),utofu)
+    OBJS_XBOUND = qws_xbound_rdma.o
+    OBJS_COMM = $(OBJS_XBOUND) $(OBJS_UTOFU) rdma_comlib_2buf.o
+  endif
+  ifeq ($(rdma),utofu_threaded)
+    OBJS_XBOUND = qws_xbound_rdma.o
+    OBJS_COMM = $(OBJS_XBOUND) $(OBJS_UTOFU) rdma_comlib_2buf.o
+  endif
+  ifeq ($(rdma),utofu_threaded_norankmap)
+    OBJS_XBOUND = qws_xbound_rdma.o
+    OBJS_COMM = $(OBJS_XBOUND) $(OBJS_UTOFU) rdma_comlib_2buf.o
+  endif
+ifeq ($(rdma),mpi_rankmap)
+    OBJS_XBOUND = qws_xbound_mpi.o
+    OBJS_COMM = $(OBJS_XBOUND) $(OBJS_UTOFU) rdma_comlib_2buf.o
+  endif
+  ifeq ($(rdma),fjmpi)
+    OBJS_XBOUND = qws_xbound_rdma.o
+    OBJS_COMM = $(OBJS_XBOUND) rdma_comlib.o rdma_comlib_2buf.o
+  endif
+  ifdef bar_reduc
+    MYFLAGS+= -D_MPI_BARRIER_BEFORE_REDUC_
+  endif
+else
+  OBJS_XBOUND = qws_xbound_nompi.o
+  OBJS_COMM = $(OBJS_XBOUND)
+endif
+
+
+OBJS := \
+	timing.o \
+	qws.o \
+	bicgstab.o \
+	deo_in_d.o \
+	deo_in_s.o \
+	deo_out_d.o \
+	deo_out_s.o \
+	deo_dag_in.o \
+	deo_dag_out.o \
+	cg.o \
+	mcg.o \
+	ddd_in_d.o \
+	ddd_in_s.o \
+	ddd_out_d.o \
+	ddd_out_s.o \
+	static_solver.o \
+	bicgstab_dd_s.o \
+	bicgstab_dd_d.o \
+	bicgstab_precdd_s.o \
+	bicgstab_dd_mix.o \
+	reordering.o \
+	clover_s.o \
+	util.o \
+
+MAIN = main.o
+
+ifdef powerapi
+OBJS += power.o
+endif
+
+ifdef kernelize
+  OBJS := \
+    report.o \
+    eml_lib.o \
+    util.o \
+    data.o \
+  MAIN = main_kern.o
+endif
+
+OBJS += $(OBJS_COMM)
+
+ifeq ($(compiler),nec)
+  OBJS += prefetch_stub.o
+endif
+
+ifdef strong_prefetch
+  objs_with_prefetch = qws.o ddd_in_s.o ddd_out_s.o static_solver.o bicgstab_precdd_s.o
+  OBJS := $(filter-out $(objs_with_prefetch),$(OBJS))
+  OBJS += $(objs_with_prefetch:.o=_strp.s)
+endif
+
+ifeq ($(target),all)
+  MYFLAGS += -DPROF_TARGET=TARGET_ALL
+endif
+ifeq ($(target),jinv)
+  MYFLAGS += -DPROF_TARGET=TARGET_JINV
+endif
+ifeq ($(target),in)
+  MYFLAGS += -DPROF_TARGET=TARGET_IN
+endif
+ifeq ($(target),pre)
+  MYFLAGS += -DPROF_TARGET=TARGET_PRE
+endif
+ifeq ($(target),pos)
+  MYFLAGS += -DPROF_TARGET=TARGET_POS
+endif
+ifeq ($(target),other)
+  MYFLAGS += -DPROF_TARGET=TARGET_OTHER
+endif
+ifeq ($(target),all_calc)
+  MYFLAGS += -DPROF_TARGET=TARGET_ALL_CALC
+endif
+ifeq ($(target),overlapped)
+  MYFLAGS += -DPROF_TARGET=TARGET_OVERLAPPED
+endif
+ifeq ($(target),send)
+  MYFLAGS += -DPROF_TARGET=TARGET_SEND
+endif
+ifeq ($(target),send_post)
+  MYFLAGS += -DPROF_TARGET=TARGET_SEND_POST
+endif
+ifeq ($(target),recv)
+  MYFLAGS += -DPROF_TARGET=TARGET_RECV
+endif
+ifeq ($(target),overlap_probe)
+  MYFLAGS += -DPROF_TARGET=TARGET_OVERLAP_PROBE
+endif
+ifeq ($(target),overlap_probe_full)
+  MYFLAGS += -DPROF_TARGET=TARGET_OVERLAP_PROBE -DOVERLAP_PROBE_FULL_TIMING
+endif
+ifeq ($(target),overlap_probe_full_light)
+  MYFLAGS += -DPROF_TARGET=TARGET_OVERLAP_PROBE -DOVERLAP_PROBE_FULL_TIMING -DOVERLAP_PROBE_CALC_END_ONLY
+endif
+ifeq ($(target),overlap_probe_full_coarse)
+  MYFLAGS += -DPROF_TARGET=TARGET_OVERLAP_PROBE -DOVERLAP_PROBE_FULL_TIMING -DOVERLAP_PROBE_COARSE_PHASE
+endif
+ifeq ($(target),overlap_probe_full_wait_only)
+  MYFLAGS += -DPROF_TARGET=TARGET_OVERLAP_PROBE -DOVERLAP_PROBE_FULL_TIMING -DOVERLAP_PROBE_WAIT_ONLY
+endif
+ifeq ($(target),reduc1)
+  MYFLAGS += -DPROF_TARGET=TARGET_REDUC1
+endif
+ifeq ($(target),reduc2)
+  MYFLAGS += -DPROF_TARGET=TARGET_REDUC2
+endif
+ifeq ($(target),reduc3)
+  MYFLAGS += -DPROF_TARGET=TARGET_REDUC3
+endif
+
+ifeq ($(profiler),caliper)
+  CFLAGS += -DUSE_CALIPER -I$(CALIPER_DIR)/include
+  LDFLAGS += -L$(CALIPER_DIR)/lib64 -lcaliper -Wl,-rpath,$(CALIPER_DIR)/lib64
+endif
+ifeq ($(profiler),timing)
+  MYFLAGS += -D_CHECK_TIMING
+endif
+ifeq ($(profiler),timing2)
+  MYFLAGS += -D_CHECK_TIMING2
+  OBJS   += $(timing2_path)
+  CFLAGS += -I.
+endif
+ifeq ($(profiler),fpcoll)
+  CFLAGS += -D_FPCOLL
+endif
+ifeq ($(profiler),fapp)
+  CFLAGS += -D_FAPP -Nfjprof
+endif
+ifeq ($(profiler),pa)
+  CFLAGS += -D_CHECK_PA -I$(PATH_LIBREADPIC)/libreadpic
+  LDFLAGS += -lreadpic -L$(PATH_LIBREADPIC)/libreadpic/sparc64xifx
+endif
+
+ifeq ($(prof_selective),1)
+  CFLAGS += -DPROF_SELECTIVE
+endif
+
+
+ifdef debug
+  MYFLAGS    += -D_DEBUG_
+endif
+
+ifdef half_prec
+  OBJS += \
+	bicgstab_precdd_s_h.o \
+	bicgstab_dd_mix2_hf.o \
+	qws_h.o
+  MYFLAGS  += -DHALF_PREC
+ifdef libhalf
+  MYFLAGS  += -I$(libhalf) -Dlibhalf
+endif
+endif
+
+
+ifdef FFLAGS
+fast:
+	$(MAKE) main
+	$(MAKE) libqws.a
+else
+fast:
+	$(MAKE) main
+endif
+
+# PRISM calls originate from the master thread in the MPI/OpenMP backend.
+ifdef mpi
+  MYFLAGS += -D_NO_OMP_SINGLE
+endif
+
+DELIVERABLES=main libqws.a
+
+$(OBJS) $(MAIN) qws_bqcd.o: mpi_check.h qws_prism.h
+timing.o: timing.h profiler.h
+
+install: $(DELIVERABLES)
+	install $(DELIVERABLES) $(PREFIX)
+
+#prepare:
+#	sed -i 's/^\#define VLEND.*/#define VLEND $(vlend)/' ./qws.h
+#	sed -i 's/^\#define VLENS.*/#define VLENS $(vlens)/' ./qws.h
+
+ifeq ($(profiler),caliper)
+main:$(OBJS) $(MAIN)
+else
+main:$(OBJS) $(MAIN) $(LDFLAGS)
+endif
+	$(CXX) -o $@ $(MAIN) $(OBJS) $(SYSLIBS) $(CXXFLAGS) $(LDFLAGS)
+
+ifdef interface
+libqws.a:$(OBJS) test_qws.o qws_bqcd.o
+	$(AR) $(ARFLAGS) rv $@ $(OBJS) test_qws.o qws_bqcd.o
+else
+libqws.a:$(OBJS)
+	$(AR) $(ARFLAGS) rv $@ $(OBJS)
+endif
+
+clean:
+	rm -f *.s *.o *.f90 *.lst
+	rm -f main libqws.a
+
+qws.o: qws.h clover_d.h clover_s.h clover_def.h
+	$(CXX) $(CXXFLAGS) $(MYFLAGS) $(CPPFLAGS) -DVERSION=\"$(GITVERSION)\" -c -o qws.o qws.cc
+qws_xbound_nompi.o: qws.h
+qws_xbound_mpi.o: qws.h
+qws_xbound_rdma.o: qws.h rdma_utofu_comlib.h rdma_comlib_2buf.h rankmap_lib_utofu.o get_tofu_coord.o
+get_tofu_coord.o: get_tofu_coord_common.o get_tofu_coord_common.h get_tofu_coord_openXYZ.o get_tofu_coord_openXY.o get_tofu_coord_openY.o
+qws_bqcd.o: qws.h
+bicgstab.o: qws.h
+bicgstab_dd_s.o: qws.h
+bicgstab_dd_d.o: qws.h
+bicgstab_dd_mix.o: qws.h
+bicgstab_precdd_s.o: qws.h
+cg.o:qws.h
+mcg.o:qws.h
+static_solver.o:qws.h
+reordering.o:qws.h
+
+bicgstab_dd_mix2_hf.o : qws.h
+bicgstab_precdd_s_h.o : qws.h
+qws_h.o: qws_h.cc qws.h clover_h.h  mult_all.h xbound_h.h ddd_in_h.h ddd_out_h.h ddd_out_h_0_inline.h  jinv_ddd_in_h.h prec_ddd_s_h.h
+
+deo_in_d.o:qws.h wilson_def.h wilson_d.h clover_d.h
+deo_in_s.o:qws.h wilson_def.h wilson_s.h clover_s.h
+deo_out_d.o:qws.h wilson_def.h wilson_d.h clover_d.h
+deo_out_s.o:qws.h wilson_def.h wilson_s.h clover_s.h
+deo_dag_in.o:qws.h wilson_def.h wilson_d.h clover_d.h
+deo_dag_out.o:qws.h wilson_def.h wilson_d.h clover_d.h
+
+ddd_in_d.o:qws.h wilson_def.h wilson_d.h clover_d.h 
+ddd_in_s.o:qws.h wilson_def.h wilson_s.h clover_s.h mult_all.h prefetch.h
+	$(CXX) $(CXXFLAGS_A) $(MYFLAGS) $(CPPFLAGS) -c -o ddd_in_s.o ddd_in_s.cc
+ddd_out_d.o:qws.h wilson_def.h wilson_d.h clover_d.h
+ddd_out_s.o:qws.h wilson_def.h wilson_s.h clover_s.h mult_all.h ddd_out_s_inline.h
+	$(CXX) $(CXXFLAGS_A) $(MYFLAGS) $(CPPFLAGS) -c -o ddd_out_s.o ddd_out_s.cc
+clover_s.o:qws.h wilson_def.h wilson_s.h clover_s.h mult_all.h prefetch.h
+	$(CXX) $(CXXFLAGS_A) $(MYFLAGS) $(CPPFLAGS) -c -o clover_s.o clover_s.cc
+ddd_in_s.s:qws.h wilson_def.h wilson_s.h clover_s.h mult_all.h prefetch.h
+clover_s.s:qws.h wilson_def.h wilson_s.h clover_s.h mult_all.h prefetch.h
+clover_s2.s:qws.h wilson_def.h wilson_s.h clover_s.h mult_all.h prefetch.h
+
+ddd_out_s.s:qws.h wilson_def.h wilson_s.h clover_s.h mult_all.h ddd_out_s_inline.h
+qws.s: qws.h clover_d.h clover_s.h clover_def.h
+static_solver.s:qws.h
+bicgstab_precdd_s.s: qws.h
+rdma_comlib.o: rdma_comlib.h
+rdma_utofu_comlib.o: rdma_utofu_comlib.h
+rdma_comlib_2buf.o: rdma_utofu_comlib.h rdma_comlib_2buf.h
+
+%_strp.s: %.s
+	sed -e "s/\(prefetch\t.*,\)0$$/\120/g" -e "s/\(prefetch\t.*,\)2$$/\122/g" $< > $@

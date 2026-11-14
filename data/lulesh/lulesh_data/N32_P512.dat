@@ -1,0 +1,1590 @@
+=== Running with -s 32 ===
+slurmstepd: error: Prolog hung on node cpu0408
+slurmstepd: error: Prolog hung on node cpu0503
+slurmstepd: error: Prolog hung on node cpu0512
+slurmstepd: error: Prolog hung on node cpu0175
+slurmstepd: error: Prolog hung on node cpu0502
+slurmstepd: error: Prolog hung on node cpu0179
+slurmstepd: error: Prolog hung on node cpu0510
+slurmstepd: error: Prolog hung on node cpu0511
+Running problem size 32^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 16777216 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  32
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  2.300915e+08
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 6.332994e-08
+        TotalAbsDiff = 4.504690e-07
+        MaxRelDiff   = 5.943411e-13
+
+Elapsed time         =          7 (s)
+Grind time (us/z/c)  = 0.42600972 (per dom)  ( 6.9797432 overall)
+FOM                  =  1201850.5 (z/s)
+
+Communication time (s)
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Simulation total excludes setup; Total includes setup.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.010992869    0.017792858
+  CommSend              0.368457301    0.625603054
+  CommSBN               0.211232248    1.438562040
+  CommSyncPosVel        0.190511465    0.402685530
+  CommMonoQ             0.155738173    0.317014263
+  MPI_Allreduce         1.674108774    2.288591269
+  Persistent setup      0.192046890    0.365137897
+  Total (simulation)    2.611040829    3.814000564
+  Total                 2.803087718    3.898962672
+
+Running problem size 32^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 16777216 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  32
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  2.300915e+08
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 6.332994e-08
+        TotalAbsDiff = 4.504690e-07
+        MaxRelDiff   = 5.943411e-13
+
+Elapsed time         =        7.6 (s)
+Grind time (us/z/c)  = 0.46582097 (per dom)  ( 7.6320108 overall)
+FOM                  =  1099134.7 (z/s)
+
+Communication time (s)
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Simulation total excludes setup; Total includes setup.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.010905798    0.018157548
+  CommSend              0.448870328    0.981794635
+  CommSBN               0.224301443    1.110703090
+  CommSyncPosVel        0.224391493    0.644833971
+  CommMonoQ             0.192751171    0.439867149
+  MPI_Allreduce         2.143889390    2.877705504
+  Persistent setup      0.144531864    0.189143642
+  Total (simulation)    3.245109623    4.157370021
+  Total                 3.389641487    4.262518775
+
+Running problem size 32^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 16777216 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  32
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  2.300915e+08
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 6.332994e-08
+        TotalAbsDiff = 4.504690e-07
+        MaxRelDiff   = 5.943411e-13
+
+Elapsed time         =        7.4 (s)
+Grind time (us/z/c)  = 0.44993899 (per dom)  ( 7.3718004 overall)
+FOM                  =  1137932.1 (z/s)
+
+Communication time (s)
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Simulation total excludes setup; Total includes setup.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.010962799    0.017506561
+  CommSend              0.504501760    1.059990186
+  CommSBN               0.326601757    1.609205354
+  CommSyncPosVel        0.240168404    0.834020482
+  CommMonoQ             0.178568114    0.417619557
+  MPI_Allreduce         1.705756402    2.122497268
+  Persistent setup      0.530296737    1.002378561
+  Total (simulation)    2.966559236    3.930111049
+  Total                 3.496855973    4.345508912
+
+Running problem size 32^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 16777216 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  32
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  2.300915e+08
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 6.332994e-08
+        TotalAbsDiff = 4.504690e-07
+        MaxRelDiff   = 5.943411e-13
+
+Elapsed time         =        6.7 (s)
+Grind time (us/z/c)  = 0.41040129 (per dom)  ( 6.7240147 overall)
+FOM                  =  1247559.4 (z/s)
+
+Communication time (s)
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Simulation total excludes setup; Total includes setup.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.010857658    0.017418574
+  CommSend              0.342898822    0.605293757
+  CommSBN               0.192974681    1.461363469
+  CommSyncPosVel        0.171499857    0.366159692
+  CommMonoQ             0.144153092    0.320042224
+  MPI_Allreduce         1.509839297    1.974975782
+  Persistent setup      0.151204943    0.186643366
+  Total (simulation)    2.372223406    3.743630194
+  Total                 2.523428349    3.858891588
+
+Running problem size 32^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 16777216 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  32
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  2.300915e+08
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 6.332994e-08
+        TotalAbsDiff = 4.504690e-07
+        MaxRelDiff   = 5.943411e-13
+
+Elapsed time         =        7.4 (s)
+Grind time (us/z/c)  = 0.45161051 (per dom)  ( 7.3991866 overall)
+FOM                  =  1133720.3 (z/s)
+
+Communication time (s)
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Simulation total excludes setup; Total includes setup.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.010897500    0.017437577
+  CommSend              0.431441116    0.782819325
+  CommSBN               0.180154974    1.381327060
+  CommSyncPosVel        0.211997417    0.546158025
+  CommMonoQ             0.192879026    0.410501326
+  MPI_Allreduce         1.987990258    2.597994045
+  Persistent setup      0.146010309    0.181501973
+  Total (simulation)    3.015360291    4.393569421
+  Total                 3.161370600    4.501079858
+
+Running problem size 32^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 16777216 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  32
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  2.300915e+08
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 6.332994e-08
+        TotalAbsDiff = 4.504690e-07
+        MaxRelDiff   = 5.943411e-13
+
+Elapsed time         =        7.3 (s)
+Grind time (us/z/c)  = 0.44530876 (per dom)  ( 7.2959388 overall)
+FOM                  =    1149764 (z/s)
+
+Communication time (s)
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Simulation total excludes setup; Total includes setup.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.010889129    0.017935478
+  CommSend              0.401426257    0.819671321
+  CommSBN               0.218778899    1.461269961
+  CommSyncPosVel        0.199307127    0.500264566
+  CommMonoQ             0.173147384    0.397575189
+  MPI_Allreduce         1.913574907    2.510986192
+  Persistent setup      0.424967618    0.674840613
+  Total (simulation)    2.917123703    4.223664517
+  Total                 3.342091321    4.469192627
+
+Running problem size 32^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 16777216 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  32
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  2.300915e+08
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 6.332994e-08
+        TotalAbsDiff = 4.504690e-07
+        MaxRelDiff   = 5.943411e-13
+
+Elapsed time         =        6.8 (s)
+Grind time (us/z/c)  = 0.41256302 (per dom)  ( 6.7594324 overall)
+FOM                  =  1241022.5 (z/s)
+
+Communication time (s)
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Simulation total excludes setup; Total includes setup.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.010881063    0.017549308
+  CommSend              0.371045875    0.659873608
+  CommSBN               0.187892088    1.395529937
+  CommSyncPosVel        0.184061314    0.383618101
+  CommMonoQ             0.159728452    0.346406420
+  MPI_Allreduce         1.503030644    2.043331038
+  Persistent setup      0.132189835    0.207471544
+  Total (simulation)    2.416639437    3.753592567
+  Total                 2.548829272    3.856351719
+
+Running problem size 32^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 16777216 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  32
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  2.300915e+08
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 6.332994e-08
+        TotalAbsDiff = 4.504690e-07
+        MaxRelDiff   = 5.943411e-13
+
+Elapsed time         =        6.9 (s)
+Grind time (us/z/c)  = 0.42005635 (per dom)  ( 6.8822033 overall)
+FOM                  =  1218884.1 (z/s)
+
+Communication time (s)
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Simulation total excludes setup; Total includes setup.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.010867008    0.017675048
+  CommSend              0.349916306    0.586439144
+  CommSBN               0.188611410    1.143515988
+  CommSyncPosVel        0.171945475    0.440325018
+  CommMonoQ             0.145174351    0.289954742
+  MPI_Allreduce         1.658051896    2.197539296
+  Persistent setup      0.748149505    1.125445162
+  Total (simulation)    2.524566446    3.449839431
+  Total                 3.272715951    4.013692671
+
+Running problem size 32^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 16777216 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  32
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  2.300915e+08
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 6.332994e-08
+        TotalAbsDiff = 4.504690e-07
+        MaxRelDiff   = 5.943411e-13
+
+Elapsed time         =        7.3 (s)
+Grind time (us/z/c)  = 0.44253346 (per dom)  ( 7.2504682 overall)
+FOM                  =  1156974.7 (z/s)
+
+Communication time (s)
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Simulation total excludes setup; Total includes setup.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.010887718    0.017940537
+  CommSend              0.403839295    0.806142812
+  CommSBN               0.183830938    1.006430438
+  CommSyncPosVel        0.203748688    0.574457661
+  CommMonoQ             0.170576783    0.392441825
+  MPI_Allreduce         1.864682261    2.532620497
+  Persistent setup      0.195585415    0.371779108
+  Total (simulation)    2.837565684    3.712014003
+  Total                 3.033151098    3.823307279
+
+Running problem size 32^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 16777216 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  32
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  2.300915e+08
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 6.332994e-08
+        TotalAbsDiff = 4.504690e-07
+        MaxRelDiff   = 5.943411e-13
+
+Elapsed time         =          7 (s)
+Grind time (us/z/c)  = 0.42703294 (per dom)  ( 6.9965077 overall)
+FOM                  =  1198970.7 (z/s)
+
+Communication time (s)
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Simulation total excludes setup; Total includes setup.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.010918273    0.017812073
+  CommSend              0.371388524    0.642569006
+  CommSBN               0.203377753    0.954673439
+  CommSyncPosVel        0.183861312    0.434370405
+  CommMonoQ             0.160860780    0.329027238
+  MPI_Allreduce         1.698092112    2.196774333
+  Persistent setup      0.132310116    0.168321774
+  Total (simulation)    2.628498753    3.526301584
+  Total                 2.760808870    3.626265139
+
+Running problem size 32^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 16777216 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  32
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  2.300915e+08
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 6.332994e-08
+        TotalAbsDiff = 4.504690e-07
+        MaxRelDiff   = 5.943411e-13
+
+Elapsed time         =        7.3 (s)
+Grind time (us/z/c)  = 0.44731324 (per dom)  ( 7.3287802 overall)
+FOM                  =  1144611.8 (z/s)
+
+Communication time (s), simulation loop only
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.004848866    0.010380462
+  CommSend              0.216503699    0.470371537
+  CommSBN               0.118874002    0.921094446
+  CommSyncPosVel        0.165195914    0.564117361
+  CommMonoQ             0.185120040    0.449284818
+  MPI_Allreduce         2.092710613    2.596425070
+  Total                 2.783253134    3.614742337
+
+Running problem size 32^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 16777216 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  32
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  2.300915e+08
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 6.332994e-08
+        TotalAbsDiff = 4.504690e-07
+        MaxRelDiff   = 5.943411e-13
+
+Elapsed time         =        8.9 (s)
+Grind time (us/z/c)  = 0.54378714 (per dom)  ( 8.9094085 overall)
+FOM                  =  941544.88 (z/s)
+
+Communication time (s), simulation loop only
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.006078325    0.012995970
+  CommSend              0.192216745    0.360570006
+  CommSBN               0.796009831    2.345004664
+  CommSyncPosVel        0.473817270    1.922141010
+  CommMonoQ             0.443241964    1.934600841
+  MPI_Allreduce         2.221056971    3.454145769
+  Total                 4.132421106    5.101271450
+
+Running problem size 32^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 16777216 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  32
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  2.300915e+08
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 6.332994e-08
+        TotalAbsDiff = 4.504690e-07
+        MaxRelDiff   = 5.943411e-13
+
+Elapsed time         =        7.7 (s)
+Grind time (us/z/c)  = 0.47163676 (per dom)  ( 7.7272966 overall)
+FOM                  =  1085581.2 (z/s)
+
+Communication time (s), simulation loop only
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.005037004    0.010702530
+  CommSend              0.209645041    0.445400687
+  CommSBN               0.225367071    1.465132245
+  CommSyncPosVel        0.196210702    0.598511044
+  CommMonoQ             0.238538871    0.709353691
+  MPI_Allreduce         2.353504240    2.945272989
+  Total                 3.228302930    4.478982013
+
+Running problem size 32^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 16777216 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  32
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  2.300915e+08
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 6.332994e-08
+        TotalAbsDiff = 4.504690e-07
+        MaxRelDiff   = 5.943411e-13
+
+Elapsed time         =        7.3 (s)
+Grind time (us/z/c)  = 0.44331545 (per dom)  ( 7.2632803 overall)
+FOM                  =  1154933.8 (z/s)
+
+Communication time (s), simulation loop only
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.005207995    0.013245096
+  CommSend              0.208513810    0.452629493
+  CommSBN               0.235347660    1.260040112
+  CommSyncPosVel        0.192043857    0.682841652
+  CommMonoQ             0.199586085    0.636501449
+  MPI_Allreduce         1.915116751    2.521527691
+  Total                 2.755816157    3.582530553
+
+Running problem size 32^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 16777216 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  32
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  2.300915e+08
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 6.332994e-08
+        TotalAbsDiff = 4.504690e-07
+        MaxRelDiff   = 5.943411e-13
+
+Elapsed time         =        7.7 (s)
+Grind time (us/z/c)  = 0.47066733 (per dom)  ( 7.7114135 overall)
+FOM                  =  1087817.2 (z/s)
+
+Communication time (s), simulation loop only
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.005238675    0.017045913
+  CommSend              0.206750005    0.434834685
+  CommSBN               0.259925725    1.375662960
+  CommSyncPosVel        0.237911512    0.754476400
+  CommMonoQ             0.253195877    0.720554745
+  MPI_Allreduce         2.242253624    2.921179111
+  Total                 3.205275419    3.973550717
+
+Running problem size 32^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 16777216 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  32
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  2.300915e+08
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 6.332994e-08
+        TotalAbsDiff = 4.504690e-07
+        MaxRelDiff   = 5.943411e-13
+
+Elapsed time         =        7.8 (s)
+Grind time (us/z/c)  = 0.47854718 (per dom)  (  7.840517 overall)
+FOM                  =    1069905 (z/s)
+
+Communication time (s), simulation loop only
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.005053773    0.010844369
+  CommSend              0.206507228    0.419354526
+  CommSBN               0.230987784    1.429868067
+  CommSyncPosVel        0.190896828    0.683150218
+  CommMonoQ             0.233100544    0.700832878
+  MPI_Allreduce         2.473284388    3.066924313
+  Total                 3.339830546    4.605917618
+
+Running problem size 32^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 16777216 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  32
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  2.300915e+08
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 6.332994e-08
+        TotalAbsDiff = 4.504690e-07
+        MaxRelDiff   = 5.943411e-13
+
+Elapsed time         =        7.3 (s)
+Grind time (us/z/c)  = 0.44251876 (per dom)  ( 7.2502274 overall)
+FOM                  =  1157013.1 (z/s)
+
+Communication time (s), simulation loop only
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.004993182    0.010704170
+  CommSend              0.207676335    0.430342418
+  CommSBN               0.209725979    1.466335786
+  CommSyncPosVel        0.175783667    0.569630967
+  CommMonoQ             0.212483938    0.586576924
+  MPI_Allreduce         1.948760629    2.548128288
+  Total                 2.759423730    3.966894257
+
+Running problem size 32^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 16777216 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  32
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  2.300915e+08
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 6.332994e-08
+        TotalAbsDiff = 4.504690e-07
+        MaxRelDiff   = 5.943411e-13
+
+Elapsed time         =        6.9 (s)
+Grind time (us/z/c)  = 0.41824095 (per dom)  ( 6.8524597 overall)
+FOM                  =  1224174.7 (z/s)
+
+Communication time (s), simulation loop only
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.004801557    0.008750196
+  CommSend              0.209568430    0.427126480
+  CommSBN               0.164551684    1.454409301
+  CommSyncPosVel        0.141936537    0.374821132
+  CommMonoQ             0.150882627    0.352025573
+  MPI_Allreduce         1.711564246    2.097565032
+  Total                 2.383305081    3.679629817
+
+Running problem size 32^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 16777216 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  32
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  2.300915e+08
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 6.332994e-08
+        TotalAbsDiff = 4.504690e-07
+        MaxRelDiff   = 5.943411e-13
+
+Elapsed time         =        7.8 (s)
+Grind time (us/z/c)  = 0.47740559 (per dom)  ( 7.8218131 overall)
+FOM                  =  1072463.4 (z/s)
+
+Communication time (s), simulation loop only
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.004840845    0.008888378
+  CommSend              0.213831899    0.445252452
+  CommSBN               0.134314659    0.925838563
+  CommSyncPosVel        0.189509814    0.620383236
+  CommMonoQ             0.225153257    0.497086515
+  MPI_Allreduce         2.493370184    3.037102122
+  Total                 3.261020657    4.093689638
+
+Running problem size 32^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 16777216 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  32
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  2.300915e+08
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 6.332994e-08
+        TotalAbsDiff = 4.504690e-07
+        MaxRelDiff   = 5.943411e-13
+
+Elapsed time         =          7 (s)
+Grind time (us/z/c)  = 0.42511594 (per dom)  ( 6.9650996 overall)
+FOM                  =  1204377.3 (z/s)
+
+Communication time (s), simulation loop only
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.004807926    0.009286051
+  CommSend              0.211591138    0.451835494
+  CommSBN               0.165962680    1.449337732
+  CommSyncPosVel        0.157263537    0.504335829
+  CommMonoQ             0.172227873    0.440603266
+  MPI_Allreduce         1.777236307    2.258225539
+  Total                 2.489089461    3.748726461
+
+=== Running with -s 64 ===
+Running problem size 64^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 134217728 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  64
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  1.840732e+09
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 4.172325e-07
+        TotalAbsDiff = 4.037764e-06
+        MaxRelDiff   = 1.265469e-11
+
+Elapsed time         =         46 (s)
+Grind time (us/z/c)  = 0.35071798 (per dom)  ( 45.969307 overall)
+FOM                  =  1459862.4 (z/s)
+
+Communication time (s)
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Simulation total excludes setup; Total includes setup.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.019595141    0.029569826
+  CommSend              1.057472467    2.648361714
+  CommSBN               1.444733734    4.344379119
+  CommSyncPosVel        0.853072057    2.922071986
+  CommMonoQ             0.723254442    1.582471034
+  MPI_Allreduce         5.226376617    7.046545465
+  Persistent setup      0.143231718    0.176088048
+  Total (simulation)    9.324504459   12.117610488
+  Total                 9.467736177   12.247762819
+
+Running problem size 64^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 134217728 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  64
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  1.840732e+09
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 4.172325e-07
+        TotalAbsDiff = 4.037764e-06
+        MaxRelDiff   = 1.265469e-11
+
+Elapsed time         =         47 (s)
+Grind time (us/z/c)  = 0.35524276 (per dom)  ( 46.562379 overall)
+FOM                  =  1441267.9 (z/s)
+
+Communication time (s)
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Simulation total excludes setup; Total includes setup.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.019732140    0.029227715
+  CommSend              1.103674928    2.682786314
+  CommSBN               1.461408896    4.460774714
+  CommSyncPosVel        0.887880509    3.125497651
+  CommMonoQ             0.759133645    1.584362264
+  MPI_Allreduce         5.688441371    7.663853235
+  Persistent setup      0.322815034    1.405119928
+  Total (simulation)    9.920271489   12.731552090
+  Total                10.243086524   13.885401208
+
+Running problem size 64^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 134217728 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  64
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  1.840732e+09
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 4.172325e-07
+        TotalAbsDiff = 4.037764e-06
+        MaxRelDiff   = 1.265469e-11
+
+Elapsed time         =         46 (s)
+Grind time (us/z/c)  = 0.35043923 (per dom)  ( 45.932771 overall)
+FOM                  =  1461023.6 (z/s)
+
+Communication time (s)
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Simulation total excludes setup; Total includes setup.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.019673831    0.029270130
+  CommSend              1.032995477    2.312881851
+  CommSBN               1.492455043    3.941538712
+  CommSyncPosVel        0.829503881    2.556009088
+  CommMonoQ             0.692918746    1.491274316
+  MPI_Allreduce         5.260382938    7.090503658
+  Persistent setup      0.135989200    0.171885549
+  Total (simulation)    9.327929915   12.056769134
+  Total                 9.463919116   12.169797245
+
+Running problem size 64^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 134217728 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  64
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  1.840732e+09
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 4.172325e-07
+        TotalAbsDiff = 4.037764e-06
+        MaxRelDiff   = 1.265469e-11
+
+Elapsed time         =         46 (s)
+Grind time (us/z/c)  = 0.35267308 (per dom)  ( 46.225566 overall)
+FOM                  =  1451769.5 (z/s)
+
+Communication time (s)
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Simulation total excludes setup; Total includes setup.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.019804623    0.029821562
+  CommSend              1.063619947    2.848325295
+  CommSBN               1.545896409    4.396855874
+  CommSyncPosVel        0.844507280    2.620000358
+  CommMonoQ             0.709644621    1.547118605
+  MPI_Allreduce         5.332502060    7.228862157
+  Persistent setup      0.135370040    0.194251986
+  Total (simulation)    9.515974939   12.608255859
+  Total                 9.651344979   12.736371177
+
+Running problem size 64^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 134217728 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  64
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  1.840732e+09
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 4.172325e-07
+        TotalAbsDiff = 4.037764e-06
+        MaxRelDiff   = 1.265469e-11
+
+Elapsed time         =         46 (s)
+Grind time (us/z/c)  = 0.35266935 (per dom)  ( 46.225077 overall)
+FOM                  =  1451784.8 (z/s)
+
+Communication time (s)
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Simulation total excludes setup; Total includes setup.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.019622599    0.030124876
+  CommSend              1.077103470    2.490680560
+  CommSBN               1.466883686    4.581169543
+  CommSyncPosVel        0.892914618    3.066313836
+  CommMonoQ             0.728691383    1.557477162
+  MPI_Allreduce         5.403523928    7.422428874
+  Persistent setup      0.140785139    0.179784758
+  Total (simulation)    9.588739684   12.331601352
+  Total                 9.729524823   12.448917473
+
+Running problem size 64^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 134217728 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  64
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  1.840732e+09
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 4.172325e-07
+        TotalAbsDiff = 4.037764e-06
+        MaxRelDiff   = 1.265469e-11
+
+Elapsed time         =         46 (s)
+Grind time (us/z/c)  = 0.35245859 (per dom)  ( 46.197453 overall)
+FOM                  =  1452652.9 (z/s)
+
+Communication time (s)
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Simulation total excludes setup; Total includes setup.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.019577807    0.029063807
+  CommSend              1.065407651    2.483063204
+  CommSBN               1.445598698    4.500091162
+  CommSyncPosVel        0.885036698    3.007090996
+  CommMonoQ             0.733735739    1.597602923
+  MPI_Allreduce         5.425759587    7.588602347
+  Persistent setup      0.140318260    0.181459010
+  Total (simulation)    9.575116181   12.359622617
+  Total                 9.715434440   12.480255192
+
+Running problem size 64^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 134217728 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  64
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  1.840732e+09
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 4.172325e-07
+        TotalAbsDiff = 4.037764e-06
+        MaxRelDiff   = 1.265469e-11
+
+Elapsed time         =         46 (s)
+Grind time (us/z/c)  = 0.35380111 (per dom)  ( 46.373419 overall)
+FOM                  =  1447140.7 (z/s)
+
+Communication time (s)
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Simulation total excludes setup; Total includes setup.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.019712722    0.030219719
+  CommSend              1.118025091    2.757651266
+  CommSBN               1.493725036    4.457930129
+  CommSyncPosVel        0.874513908    2.838923042
+  CommMonoQ             0.756527702    1.672052150
+  MPI_Allreduce         5.492040612    7.537356684
+  Persistent setup      0.127834388    0.164839086
+  Total (simulation)    9.754545069   12.474201312
+  Total                 9.882379458   12.587546995
+
+Running problem size 64^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 134217728 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  64
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  1.840732e+09
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 4.172325e-07
+        TotalAbsDiff = 4.037764e-06
+        MaxRelDiff   = 1.265469e-11
+
+Elapsed time         =         46 (s)
+Grind time (us/z/c)  = 0.35004588 (per dom)  ( 45.881214 overall)
+FOM                  =  1462665.4 (z/s)
+
+Communication time (s)
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Simulation total excludes setup; Total includes setup.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.019766800    0.029361410
+  CommSend              1.019453730    2.441480777
+  CommSBN               1.488628330    4.562321744
+  CommSyncPosVel        0.760841837    2.218171010
+  CommMonoQ             0.661232507    1.341906333
+  MPI_Allreduce         5.251576428    6.986035713
+  Persistent setup      0.128468554    0.161828860
+  Total (simulation)    9.201499633   11.916574353
+  Total                 9.329968187   12.058184486
+
+Running problem size 64^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 134217728 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  64
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  1.840732e+09
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 4.172325e-07
+        TotalAbsDiff = 4.037764e-06
+        MaxRelDiff   = 1.265469e-11
+
+Elapsed time         =         47 (s)
+Grind time (us/z/c)  = 0.35996129 (per dom)  ( 47.180847 overall)
+FOM                  =  1422375.2 (z/s)
+
+Communication time (s)
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Simulation total excludes setup; Total includes setup.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.020016814    0.031900296
+  CommSend              0.999872160    2.258152643
+  CommSBN               1.364614279    4.666793408
+  CommSyncPosVel        0.800854675    2.762828653
+  CommMonoQ             0.670451784    1.588727231
+  MPI_Allreduce         6.025162551    8.012034647
+  Persistent setup      0.128693508    0.185118465
+  Total (simulation)    9.880972264   12.739239887
+  Total                10.009665773   12.835475327
+
+Running problem size 64^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 134217728 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  64
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  1.840732e+09
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 4.172325e-07
+        TotalAbsDiff = 4.037764e-06
+        MaxRelDiff   = 1.265469e-11
+
+Elapsed time         =         47 (s)
+Grind time (us/z/c)  = 0.35798856 (per dom)  ( 46.922277 overall)
+FOM                  =  1430213.3 (z/s)
+
+Communication time (s)
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Simulation total excludes setup; Total includes setup.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.020068675    0.031081420
+  CommSend              1.063682637    2.366071809
+  CommSBN               1.373350887    4.732141819
+  CommSyncPosVel        0.840244627    2.790532726
+  CommMonoQ             0.681490941    1.579639651
+  MPI_Allreduce         5.653333104    7.738396124
+  Persistent setup      0.119718292    0.151767919
+  Total (simulation)    9.632170871   12.155453904
+  Total                 9.751889164   12.260642785
+
+Running problem size 64^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 134217728 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  64
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  1.840732e+09
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 4.172325e-07
+        TotalAbsDiff = 4.037764e-06
+        MaxRelDiff   = 1.265469e-11
+
+Elapsed time         =         49 (s)
+Grind time (us/z/c)  = 0.37328437 (per dom)  ( 48.927128 overall)
+FOM                  =  1371608.5 (z/s)
+
+Communication time (s), simulation loop only
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.011626701    0.017846822
+  CommSend              1.103601039    3.061084420
+  CommSBN               2.005280516    5.530500103
+  CommSyncPosVel        0.642044949    3.467281104
+  CommMonoQ             0.740801668    2.459611336
+  MPI_Allreduce         6.427344030    8.738034790
+  Total                10.930698903   14.408985195
+
+Running problem size 64^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 134217728 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  64
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  1.840732e+09
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 4.172325e-07
+        TotalAbsDiff = 4.037764e-06
+        MaxRelDiff   = 1.265469e-11
+
+Elapsed time         =         49 (s)
+Grind time (us/z/c)  = 0.37098902 (per dom)  ( 48.626273 overall)
+FOM                  =  1380094.7 (z/s)
+
+Communication time (s), simulation loop only
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.011553910    0.017035904
+  CommSend              1.121791451    2.933079072
+  CommSBN               1.974947622    5.676652342
+  CommSyncPosVel        0.640186870    3.045787621
+  CommMonoQ             0.777831652    2.090016413
+  MPI_Allreduce         6.108760816    8.409142626
+  Total                10.635072321   14.261173000
+
+Running problem size 64^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 134217728 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  64
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  1.840732e+09
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 4.172325e-07
+        TotalAbsDiff = 4.037764e-06
+        MaxRelDiff   = 1.265469e-11
+
+Elapsed time         =         49 (s)
+Grind time (us/z/c)  = 0.37109934 (per dom)  ( 48.640733 overall)
+FOM                  =  1379684.5 (z/s)
+
+Communication time (s), simulation loop only
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.011744059    0.017822638
+  CommSend              1.148083517    2.750159363
+  CommSBN               2.132023023    5.515497960
+  CommSyncPosVel        0.550167691    2.146386024
+  CommMonoQ             0.680435926    2.024510288
+  MPI_Allreduce         6.110126159    8.816709514
+  Total                10.632580376   14.209982470
+
+Running problem size 64^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 134217728 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  64
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  1.840732e+09
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 4.172325e-07
+        TotalAbsDiff = 4.037764e-06
+        MaxRelDiff   = 1.265469e-11
+
+Elapsed time         =         48 (s)
+Grind time (us/z/c)  = 0.36976076 (per dom)  ( 48.465282 overall)
+FOM                  =  1384679.1 (z/s)
+
+Communication time (s), simulation loop only
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.011593005    0.032181414
+  CommSend              1.065942847    3.003277573
+  CommSBN               1.942941716    5.729030423
+  CommSyncPosVel        0.609396457    3.371163654
+  CommMonoQ             0.687456964    1.987287817
+  MPI_Allreduce         6.176565531    8.307010323
+  Total                10.493896519   14.133561280
+
+Running problem size 64^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 134217728 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  64
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  1.840732e+09
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 4.172325e-07
+        TotalAbsDiff = 4.037764e-06
+        MaxRelDiff   = 1.265469e-11
+
+Elapsed time         =         49 (s)
+Grind time (us/z/c)  = 0.37244102 (per dom)  ( 48.816589 overall)
+FOM                  =  1374714.3 (z/s)
+
+Communication time (s), simulation loop only
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.011514927    0.029753332
+  CommSend              1.130621015    2.928948703
+  CommSBN               2.005117799    5.708613512
+  CommSyncPosVel        0.636742768    3.113811565
+  CommMonoQ             0.759670210    2.076443678
+  MPI_Allreduce         6.292383462    8.656273676
+  Total                10.836050182   14.534069474
+
+Running problem size 64^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 134217728 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  64
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  1.840732e+09
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 4.172325e-07
+        TotalAbsDiff = 4.037764e-06
+        MaxRelDiff   = 1.265469e-11
+
+Elapsed time         =         49 (s)
+Grind time (us/z/c)  = 0.37101144 (per dom)  ( 48.629212 overall)
+FOM                  =  1380011.4 (z/s)
+
+Communication time (s), simulation loop only
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.011506423    0.017297772
+  CommSend              1.091133277    2.595253179
+  CommSBN               2.052901141    5.287670851
+  CommSyncPosVel        0.593397035    3.251897792
+  CommMonoQ             0.696573934    2.501819507
+  MPI_Allreduce         6.296676867    8.630366600
+  Total                10.742188675   14.088150201
+
+Running problem size 64^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 134217728 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  64
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  1.840732e+09
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 4.172325e-07
+        TotalAbsDiff = 4.037764e-06
+        MaxRelDiff   = 1.265469e-11
+
+Elapsed time         =         49 (s)
+Grind time (us/z/c)  =  0.3718396 (per dom)  (  48.73776 overall)
+FOM                  =  1376937.8 (z/s)
+
+Communication time (s), simulation loop only
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.011577125    0.018292032
+  CommSend              1.124244719    2.996060617
+  CommSBN               2.010139216    5.707312326
+  CommSyncPosVel        0.561563387    3.275387448
+  CommMonoQ             0.704887084    2.452305190
+  MPI_Allreduce         6.387352957    8.535456940
+  Total                10.799764489   14.264833356
+
+Running problem size 64^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 134217728 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  64
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  1.840732e+09
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 4.172325e-07
+        TotalAbsDiff = 4.037764e-06
+        MaxRelDiff   = 1.265469e-11
+
+Elapsed time         =         49 (s)
+Grind time (us/z/c)  = 0.37090759 (per dom)  (   48.6156 overall)
+FOM                  =  1380397.7 (z/s)
+
+Communication time (s), simulation loop only
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.011575741    0.016982176
+  CommSend              1.117688629    2.965304013
+  CommSBN               2.027680305    5.706648885
+  CommSyncPosVel        0.641362376    3.247796980
+  CommMonoQ             0.749684987    2.288757173
+  MPI_Allreduce         6.148668830    8.628764717
+  Total                10.696660868   14.168818778
+
+Running problem size 64^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 134217728 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  64
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  1.840732e+09
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 4.172325e-07
+        TotalAbsDiff = 4.037764e-06
+        MaxRelDiff   = 1.265469e-11
+
+Elapsed time         =         49 (s)
+Grind time (us/z/c)  = 0.37133696 (per dom)  ( 48.671877 overall)
+FOM                  =  1378801.6 (z/s)
+
+Communication time (s), simulation loop only
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.011519452    0.018007155
+  CommSend              1.111993376    2.945515110
+  CommSBN               1.999596070    5.669263018
+  CommSyncPosVel        0.631017791    3.549298565
+  CommMonoQ             0.764436851    2.285757798
+  MPI_Allreduce         6.173084817    8.762150083
+  Total                10.691648357   14.254330710
+
+Running problem size 64^3 per domain until completion
+Num processors: 512
+Num threads: 8
+Total number of elements: 134217728 
+
+To run other sizes, use -s <integer>.
+To run a fixed number of iterations, use -i <integer>.
+To run a more or less balanced region set, use -b <integer>.
+To change the relative costs of regions, use -c <integer>.
+To print out progress, use -p
+To write an output file for VisIt, use -v
+See help (-h) for more options
+
+Run completed:
+   Problem size        =  64
+   MPI tasks           =  512
+   Iteration count     =  500
+   Final Origin Energy =  1.840732e+09
+   Testing Plane 0 of Energy Array on rank 0:
+        MaxAbsDiff   = 4.172325e-07
+        TotalAbsDiff = 4.037764e-06
+        MaxRelDiff   = 1.265469e-11
+
+Elapsed time         =         49 (s)
+Grind time (us/z/c)  = 0.37234165 (per dom)  ( 48.803565 overall)
+FOM                  =  1375081.2 (z/s)
+
+Communication time (s), simulation loop only
+  Includes packing/unpacking and MPI waits; excludes overlapped computation.
+  Routine              Rank average   Rank maximum
+  CommRecv              0.011478206    0.017257186
+  CommSend              1.126746379    3.009839862
+  CommSBN               1.972199214    5.586085112
+  CommSyncPosVel        0.628055907    3.400770947
+  CommMonoQ             0.751432985    2.222776399
+  MPI_Allreduce         6.306335272    8.806653965
+  Total                10.796247963   14.315510034
+

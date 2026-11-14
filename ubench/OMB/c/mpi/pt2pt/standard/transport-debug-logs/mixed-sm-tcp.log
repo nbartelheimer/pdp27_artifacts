@@ -1,0 +1,33 @@
+[hpca-014:2817724] mca: base: components_register: registering framework bml components
+[hpca-014:2817724] mca: base: components_register: found loaded component r2
+[hpca-014:2817724] mca: base: components_register: component r2 register function successful
+[hpca-014:2817724] mca: base: components_open: opening bml components
+[hpca-014:2817724] mca: base: components_open: found loaded component r2
+[hpca-014:2817724] mca: base: components_open: component r2 open function successful
+[hpca-014:2817723] mca: base: components_register: registering framework bml components
+[hpca-014:2817723] mca: base: components_register: found loaded component r2
+[hpca-014:2817723] mca: base: components_register: component r2 register function successful
+[hpca-014:2817723] mca: base: components_open: opening bml components
+[hpca-014:2817723] mca: base: components_open: found loaded component r2
+[hpca-014:2817723] mca: base: components_open: component r2 open function successful
+[hpca-013:1494249] mca: base: components_register: registering framework bml components
+[hpca-013:1494249] mca: base: components_register: found loaded component r2
+[hpca-013:1494249] mca: base: components_register: component r2 register function successful
+[hpca-013:1494249] mca: base: components_open: opening bml components
+[hpca-013:1494249] mca: base: components_open: found loaded component r2
+[hpca-013:1494249] mca: base: components_open: component r2 open function successful
+[hpca-013:1494250] mca: base: components_register: registering framework bml components
+[hpca-013:1494250] mca: base: components_register: found loaded component r2
+[hpca-013:1494250] mca: base: components_register: component r2 register function successful
+[hpca-013:1494250] mca: base: components_open: opening bml components
+[hpca-013:1494250] mca: base: components_open: found loaded component r2
+[hpca-013:1494250] mca: base: components_open: component r2 open function successful
+PASS: 4 ranks, verified ring transfers 4 B to 1 MiB, allreduce, barrier, and self-send
+[hpca-013:1494249] mca: base: close: component r2 closed
+[hpca-013:1494249] mca: base: close: unloading component r2
+[hpca-013:1494250] mca: base: close: component r2 closed
+[hpca-013:1494250] mca: base: close: unloading component r2
+[hpca-014:2817723] mca: base: close: component r2 closed
+[hpca-014:2817723] mca: base: close: unloading component r2
+[hpca-014:2817724] mca: base: close: component r2 closed
+[hpca-014:2817724] mca: base: close: unloading component r2

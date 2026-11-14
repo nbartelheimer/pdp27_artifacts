@@ -1,0 +1,26 @@
+[hpca-013:1491418] mtl_ofi_component.c:587: mtl:ofi:provider_include = "(null)"
+[hpca-013:1491418] mtl_ofi_component.c:590: mtl:ofi:provider_exclude = "shm,sockets,tcp,udp,rstream,usnic,net"
+[hpca-013:1491417] mtl_ofi_component.c:587: mtl:ofi:provider_include = "(null)"
+[hpca-013:1491417] mtl_ofi_component.c:590: mtl:ofi:provider_exclude = "shm,sockets,tcp,udp,rstream,usnic,net"
+[hpca-013:1491417] mtl_ofi_component.c:725: EFA specific fi_getinfo(): No data available
+[hpca-013:1491418] mtl_ofi_component.c:725: EFA specific fi_getinfo(): No data available
+[hpca-013:1491418] mtl_ofi_component.c:765: fi_getinfo(): Success
+[hpca-013:1491418] mtl_ofi_component.c:343: mtl:ofi:provider: verbs;ofi_rxm
+[hpca-013:1491417] mtl_ofi_component.c:765: fi_getinfo(): Success
+[hpca-013:1491417] mtl_ofi_component.c:343: mtl:ofi:provider: verbs;ofi_rxm
+[hpca-013:1491417] mtl_ofi_component.c:368: mtl:ofi:provider:domain: mlx5_0
+[hpca-013:1491418] mtl_ofi_component.c:368: mtl:ofi:provider:domain: mlx5_0
+[hpca-013:1491418] btl_ofi_component.c:318: btl:ofi:provider_include = "(null)"
+[hpca-013:1491418] btl_ofi_component.c:320: btl:ofi:provider_exclude = "shm,sockets,tcp,udp,rstream,usnic,net"
+[hpca-013:1491417] btl_ofi_component.c:318: btl:ofi:provider_include = "(null)"
+[hpca-013:1491417] btl_ofi_component.c:320: btl:ofi:provider_exclude = "shm,sockets,tcp,udp,rstream,usnic,net"
+[hpca-013:1491418] btl_ofi_component.c:79: btl:ofi: "shm" in exclude list
+[hpca-013:1491417] btl_ofi_component.c:79: btl:ofi: "shm" in exclude list
+
+# OSU MPI Latency Test v7.5.2
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+1                       1.85
+2                       1.83
+4                       1.83
+8                       1.83
